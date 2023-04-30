@@ -1,4 +1,4 @@
-# https://learn-2.galvanize.com/cohorts/3646/blocks/1829/content_files/hash-tables/overview-of-hash-tables.md
+#https://learn-2.galvanize.com/cohorts/3646/blocks/1829/content_files/hash-tables/using-hash-tables.md
 # Pseudocode
 # With this strategy, our code will take this approach:
 
