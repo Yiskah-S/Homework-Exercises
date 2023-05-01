@@ -251,3 +251,43 @@ is_permutation(str1, str2)
 
 #     return red_frequency_hash == blue_frequency_hash
 
+# Write a function is_palindrome_permutation that takes a string as an argument 
+# and returns True if the letters could be re-arranged into a palindrome.
+
+str = "lool"
+
+def is_palindrome_permutation(s):
+    char_count = {}
+
+    for char in s:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+
+    odd_count = 0
+
+    for count in char_count.values():
+        if count % 2 == 1:
+            odd_count += 1
+            if odd_count > 1:
+                return False
+
+    return True
+
+# Alternatives:
+
+# def is_palindrome_permutation(text):
+#     frequency_hash = {}
+#     for char in text:
+#         if char in frequency_hash:
+#             frequency_hash[char] += 1
+#         else:
+#             frequency_hash[char] = 1
+
+#     odd_matches_count = 0
+#     for frequency in frequency_hash.values():
+#         if frequency % 2:
+#             odd_matches_count += 1
+
+#     return odd_matches_count <= 1
