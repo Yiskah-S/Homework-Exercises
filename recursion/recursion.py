@@ -82,11 +82,43 @@ def is_nested_parens(parens):
 # It returns True if query is found in array, and False otherwise. Make the algorithm recursive.
 # Be sure to implement search using recursion.
 
-array = [4, 3, 7, 2]
-query = 2
+# array = ["b", "c", "a"]
+# array = ["a", "b", "c"]
+# array = []
+# query = "a"
+
+# def search(array, query):
+#     if len(array) == 0:
+#         return False
+#     elif query == array[0]:
+#         return True
+#     else:
+#         return search(array[1:], query)
+
+# def search(array, query):
+#     if len(array) == 0:
+#         return False
+#     elif query == array[0] or query == array[-1]:
+#         return True
+#     else:
+#         return search(array[1:-1], query)
 
 def search(array, query):
-    pass
+    if len(array) == 0:
+        return False
+    # elif query == array[0] or query == array[-1]:
+    #     return True
+    elif len(array) == 1:
+        return query == array[0]
+    else:
+        mid = len(array) // 2
+        left_half = array[:mid]
+        right_half = array[mid:]
+        return search(left_half, query) or search(right_half, query)
+    
+# test = search(array, query)
+# print(f"{test = }")
+
 
 
 # Write a recursive function is_palindrome that accepts a string text as a parameter. It returns a boolean value indicating whether or not that string is a palindrome  .
