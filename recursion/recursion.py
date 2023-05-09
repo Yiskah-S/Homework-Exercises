@@ -121,12 +121,23 @@ def search(array, query):
 
 
 
-# Write a recursive function is_palindrome that accepts a string text as a parameter. It returns a boolean value indicating whether or not that string is a palindrome  .
+# Write a recursive function is_palindrome that accepts a string text as a parameter. It returns a boolean value indicating whether or not that string is a palindrome.
 
-text = "racecar"
+# text = "racecar"
 
 def is_palindrome(text):
-    pass
+    if len(text) <= 1:
+        return True
+    elif text[0] == text[-1]:
+        return is_palindrome(text[1:-1])
+    else:
+        return False
+
+# test = is_palindrome(text)
+# print(f"{test = }")
+
+
+
 
 
 # Write a recursive function named digit_match. It accepts two non-negative integers as parameters. It returns the number of digits that match in the two integers.
