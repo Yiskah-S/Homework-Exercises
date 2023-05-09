@@ -1,39 +1,80 @@
 # Write a function factorial that accepts an integer parameter n. It uses recursion to compute and return the value of n factorial (also written as n!).
 
-int = 0
+# int = 5
 
 def factorial(int):
-    pass
+    if int < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    elif int == 0:
+        return 1
+
+    return factorial(int-1) * int
+
+# test = factorial(int)
+# print(f"{test = }")
 
 
 
 
 # Write a function reverse that accepts a string text as a parameter. It returns the reverse of text by reversing all characters in the string.
 
-str = "cat"
+# str = "cat"
 
 def reverse(str):
-    pass 
+    if len(str) <= 1:
+        return str
+    else:
+        return reverse(str[1:]) + str[0]
 
+# test = reverse(str)
+# print(f"{test = }")
 
 
 # Write a function bunny that accepts an integer parameter count. count represents a number of bunnies and each bunny has two big floppy ears. 
 # We want to compute the total number of ears across all the bunnies recursively (without loops or multiplication).
 
-count = 4
+# count = 3
 
 def bunny(count): 
-    pass
+    if count == 0:
+        return 0
+    return bunny(count - 1) + 2
+    
+# test = bunny(count)
+# print(f"{test = }")
+
+
 
 
 
 # Write a function is_nested_parens that accepts a string parens of only parentheses. 
 # It returns True if those parentheses are properly nested, and False if they are not. You may assume that no non-parenthesis characters will be passed to this function.
 
-parans = "((()))"
+# parens = "((()))"
 
-def is_nested_parens(parans):
-    pass
+def is_nested_parens(parens):
+    if len(parens) == 0:
+        return True
+    elif parens[0] == '(' and parens[-1] == ')':
+        return is_nested_parens(parens[1:-1])
+    else:
+        return False
+
+# Empty string returning True is dumb, because it's not properly nested
+# parens!
+# It should be:
+# def is_nested_parens(parens):
+#     if len(parens) % 2 <= 1 or parens[0] != "(" or parens[-1] != ")":
+#         return False
+#     else:
+#         return is_nested_parens(parens[1:-1]) if len(parens) > 2 else True
+
+# And empty string should return False
+
+# test = is_nested_parens(parens)
+# print(f"{test = }")
+
+
 
 
 

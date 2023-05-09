@@ -1,6 +1,6 @@
 {
     "python.testing.pytestArgs": [
-        "hash_tables"
+        "recursion"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
