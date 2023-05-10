@@ -149,8 +149,67 @@ def is_palindrome(text):
 # Number of matches: 4
 # Matching pairs: 2-2, 5-5, 8-8, 1-1
 
-num1 = 1072503891
-num2 = 62530841
+num1 = 51
+num2 = 81
+
+# def digit_match(num1, num2):
+#     if num1 == 0 and num2 == 0:
+#         return 1
+#     elif num1 == 0 or num2 == 0:
+#         return 0
+#     elif num1 % 10 == num2 % 10:
+#         return 1 + digit_match(num1 // 10, num2 // 10)
+#     else:
+#         return digit_match(num1 // 10, num2 // 10)
+
+# def digit_match(num1, num2):
+#     return (num1 != 0 or num2 != 0) * (num1 % 10 == num2 % 10) + digit_match(num1 // 10, num2 // 10) if (num1!=0 and num2!=0) else 0
+
+# def digit_match(num1, num2):
+#     count = 0
+#     num1 = str(num1)
+#     num2 = str(num2)
+
+#     if len(num1) == 0 or len(num2) == 0:
+#         return count
+#     elif num1[-1] == num2[-1]:
+#         count = count + 1
+#         return count + digit_match(num1[0:-1], num2[0:-1])
+#     else:
+#         return count + digit_match(num1[0:-1], num2[0:-1])
+
+
+# def digit_match(num1, num2):
+#     num1 = str(num1)
+#     num2 = str(num2)
+
+#     if len(num1) == 0 or len(num2) == 0:
+#         return 0
+#     elif num1[-1] == num2[-1]:
+#         return 1 + digit_match(num1[0:-1], num2[0:-1])
+#     else:
+#         return digit_match(num1[0:-1], num2[0:-1])
+    
+# def digit_match(num1, num2):
+#     num1 = str(num1)
+#     num2 = str(num2)
+
+#     if len(num1) == 0 or len(num2) == 0:
+#         return 0
+#     else:
+#         return (num1[-1] == num2[-1]) + digit_match(num1[0:-1], num2[0:-1])
+    
+# def digit_match(num1, num2):
+#     num1 = str(num1)
+#     num2 = str(num2)
+    
+#     return (len(num1)!=0 and len(num2)!=0) * ((num1[-1] == num2[-1]) + digit_match(num1[0:-1], num2[0:-1]))
 
 def digit_match(num1, num2):
-    pass
+    num1 = str(num1)
+    num2 = str(num2)
+
+    return (len(num1) !=0 or len(num2) !=0 ) * (num1[-1] == num2[-1]) + digit_match(num1[0:-1], num2[0:-1]) if (len(num1)!=0 and len(num2)!=0) else 0
+    
+test = digit_match(num1, num2)
+print(f"{test = }")
